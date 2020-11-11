@@ -12,17 +12,17 @@ export default function Cards() {
     async function getData() {
       const baseURL = `https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${startIndex}`;
       let response = await axios.get(baseURL);
-      await setPokeData(response.data.results);
-      await setNextUrl(response.data.next);
-      await setPrevUrl(response.data.previous);
-      console.log(response);
+      setPokeData(response.data.results);
+      setNextUrl(response.data.next);
+      setPrevUrl(response.data.previous);
       // console.log(pokeData.length);
       // console.log(pokeData, nextUrl, prevUrl);
     }
-
+    
     getData();
   }, []);
-
+  
+  // console.log(pokeData);
   return (
     <div>
       {pokeData.map((pokemon, index) => (
