@@ -22,11 +22,11 @@ export default function Cards() {
     getData();
   }, []);
   
-  // console.log(pokeData);
+  
   return (
-    <div>
+    <div className="grid">
       {pokeData.map((pokemon, index) => (
-        <Card pokemon={pokemon} id={index + 1} key={Math.random()} />
+        <Card pokemon={pokemon} id={index + 1} key={index} />
       ))}
     </div>
   );

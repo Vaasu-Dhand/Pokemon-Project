@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ColorScheme from './ColorScheme'
 import axios from "axios";
 
 export default function Card({ pokemon, id }) {
@@ -16,22 +17,25 @@ export default function Card({ pokemon, id }) {
     async function getPokemon() {
       let response = await axios.get(url);
       setData(response.data);
-      setType(data.types[0].type.name)
-      setStats(data.stats)
-      setImgUrl(data.sprites.back_default)
-
-      // console.log(data);  // ! Logs empty object
+      setType(response.data.types[0].type.name)
+      setStats(response.data.stats)
+      // setImgUrl(response.data.sprites.front_default) API 1
+      setImgUrl(`https://cdn.traction.one/pokedex/pokemon/${id}.png`);
 
     }
 
     getPokemon();
-  }, [data, url]);
+  }, [url]);
+
+  // console.log({data});
 
 return (
-  <div className="card">
-    <img src={imgUrl} alt="pokeImg" />
+  <div className="card" style={{ backgroundColor: ColorScheme(type) }}>
+    <div className="wrapper-img">
+      <img src={imgUrl} alt="pokeImg" width="150px" height="150px" />
+    </div>
     <h4>#{id}</h4>
-    <h3>{name}</h3>
+    <h2>{name}</h2>
     <h3>{type}</h3>
   </div>
   );
