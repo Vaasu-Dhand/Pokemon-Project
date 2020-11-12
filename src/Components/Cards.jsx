@@ -15,8 +15,6 @@ export default function Cards() {
       setPokeData(response.data.results);
       setNextUrl(response.data.next);
       setPrevUrl(response.data.previous);
-      // console.log(pokeData.length);
-      // console.log(pokeData, nextUrl, prevUrl);
     }
     
     getData();

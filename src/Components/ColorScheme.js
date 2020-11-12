@@ -19,7 +19,7 @@ export default function colorScheme(pokemonType) {
     case "ghost":
       return "#71C558";
     case "grass": 
-      return "#90c744"
+      return "#90c744";
     case "ground":
       return "#E0C068";
     case "ice":
