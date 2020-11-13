@@ -26,7 +26,7 @@ export default function colorScheme(pokemonType) {
       return "#98D8D8";
     case "normal":
       return "#A8A878";
-    case "poision":
+    case "poison":
       return "#A040A0";
     case "psychic":
       return "#F85888";

@@ -27,8 +27,6 @@ export default function Card({ pokemon, id }) {
     getPokemon();
   }, [url]);
 
-  // console.log({data});
-
   const flip = () => {
     setFlipped(!flipped);
   };

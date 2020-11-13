@@ -14,7 +14,6 @@ nav {
 }
 
 img.logo {
-  width: 500px;
   height: 100px;
 }
 /* * Cards */
@@ -147,6 +146,7 @@ span {
   height: 8px;
   border-radius: 1rem;
   position: relative;
+  overflow: hidden;
 }
 
 .points {
