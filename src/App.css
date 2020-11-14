@@ -16,8 +16,8 @@ nav {
 img.logo {
   height: 100px;
 }
-/* * Cards */
 
+/* * Cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -123,7 +123,6 @@ h4 {
 }
 
 /* * Progress Bar */
-
 .bar {
   display: flex;
   justify-content: center;
@@ -156,4 +155,51 @@ span {
   bottom: 0;
   width: 70%;
   background-color: rgb(209, 77, 54);
+}
+
+/* * Loading Screen */
+.loading-background {
+  overflow-x: hidden;
+  background: url(./Images/background.gif) no-repeat bottom fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+img.pikachu {
+  position: absolute;
+  bottom: 0;
+  animation: mymove 3s forwards linear;
+}
+
+@keyframes mymove {
+  from {left: 0;}
+  to {left: 50%;}
+}
+
+@media only screen and (min-width: 501px) {
+  @keyframes mymove {
+    from {left: 0;}
+    to {left: 60%;}
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  @keyframes mymove {
+    from {left: 0;}
+    to {left: 70%;}
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  @keyframes mymove {
+    from {left: 0;}
+    to {left: 80%;}
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  @keyframes mymove {
+    from {left: 0;}
+    to {left: 90%;}
+  }
 }

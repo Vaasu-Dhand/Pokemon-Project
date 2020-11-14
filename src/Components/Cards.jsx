@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Card from "../Components/Card";
 import axios from "axios";
+import Card from "../Components/Card";
 
 export default function Cards() {
   const [results, setResults] = useState(20);
@@ -12,13 +12,10 @@ export default function Cards() {
       const baseURL = `https://pokeapi.co/api/v2/pokemon/?limit=${results}&offset=0`;
       let response = await axios.get(baseURL);
       setPokeData(response.data.results);
-
     }
 
     getData();
   }, [results]);
-
-  
 
   const fetchMoreData = () => {
     setResults((results) => results + 20);
@@ -30,7 +27,7 @@ export default function Cards() {
       next={fetchMoreData}
       height={'100vh'}
       hasMore={true}
-      loader={<h4>Loading...</h4>}
+      loader={<h4 style={{textAlign: 'center'}}>Loading...</h4>}
       endMessage={
         <p style={{ textAlign: "center" }}>
           <b>Yay! You have seen it all</b>

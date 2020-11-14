@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import ColorScheme from "./ColorScheme";
-import ProgressBar from './ProgressBar'
 import axios from "axios";
+import ColorScheme from "../ColorScheme";
+import ProgressBar from './ProgressBar'
 
 export default function Card({ pokemon, id }) {
   // Destructure Name and URL
   const { name, url } = pokemon;
 
   // State Variables
-  const [data, setData] = useState({});
   const [type, setType] = useState("");
   const [stats, setStats] = useState([]);
   const [imgUrl, setImgUrl] = useState("");
@@ -17,7 +16,6 @@ export default function Card({ pokemon, id }) {
   useEffect(() => {
     async function getPokemon() {
       let response = await axios.get(url);
-      setData(response.data);
       setType(response.data.types[0].type.name);
       setStats(response.data.stats);
       // setImgUrl(response.data.sprites.front_default) API 1
