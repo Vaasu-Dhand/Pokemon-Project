@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 import Card from "../Components/Card";
+import NavBar from "../Components/NavBar";
 
 export default function Cards() {
   const [results, setResults] = useState(20);
@@ -25,15 +26,15 @@ export default function Cards() {
     <InfiniteScroll
       dataLength={pokeData.length}
       next={fetchMoreData}
-      height={'100vh'}
       hasMore={true}
-      loader={<h4 style={{textAlign: 'center'}}>Loading...</h4>}
+      loader={<h4 style={{ textAlign: "center" }}>Loading...</h4>}
       endMessage={
         <p style={{ textAlign: "center" }}>
           <b>Yay! You have seen it all</b>
         </p>
       }
     >
+      <NavBar />
       <div className="grid">
         {pokeData.map((pokemon, index) => (
           <Card pokemon={pokemon} id={index + 1} key={index} />

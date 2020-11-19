@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import NavBar from "./Components/NavBar";
 import Cards from "./Components/Cards";
 import LoadingScreen from "./Components/LoadingScreen";
 
@@ -15,7 +14,6 @@ function App() {
     <>
       {loading === false ? (
         <div className="App">
-          <NavBar />
           <Cards />
         </div>
       ) : (
